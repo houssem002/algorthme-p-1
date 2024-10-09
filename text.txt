@@ -1,0 +1,38 @@
+Algorithme AnalysePhrase
+
+    // Déclaration des variables
+    entier longueur <- 0  
+    entier mots <- 1      
+    entier voyelles <- 0 
+    caractère c
+    chaîne phrase
+
+    // Read the sentence from the user
+    Ecrire ("Entrez une phrase qui se termine par un point :")
+    Lire (phrase)
+
+    // Iterate through the sentence character by character
+    Pour i de 1 à longueur(phrase) faire
+        c <= phrase[i]
+        
+        // Check if it's a vowel
+        Si c = 'a' ou c = 'e' ou c = 'i' ou c = 'o' ou c = 'u' ou c = 'y' ou c = 'A' ou c = 'E' ou c = 'I' ou c = 'O' ou c = 'U' ou c = 'Y' Alors
+            voyelles <= voyelles + 1
+        FinSi
+        
+        // Check if it's a space to count the words
+        Si c = ' ' Alors
+            mots <= mots + 1
+        FinSi
+
+        // Increment the length counter except for the final period
+        Si c <> '.' Alors
+            longueur <= longueur + 1
+        FinSi
+    FinPour
+
+    // Afficher results
+    Ecrire ("Length of the sentence (without the period): ", longueur)
+    Ecrire ("Number of words: ", mots)
+    Ecrire ("Number of vowels: ", voyelles)
+FinAlgorithme
